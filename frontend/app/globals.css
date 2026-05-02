@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Sentient";
+  src:
+    url("https://cdn.fontshare.com/wf/XC4UYXMVQINJJ47RSKB74CCAWSP5BUGZ/TGOWV4725NO3KHVKMWHG47SRPLMNHMOO/433XP6QWDVL6KQ5K7ZCOP524TX4LE4RJ.woff2") format("woff2"),
+    url("https://cdn.fontshare.com/wf/XC4UYXMVQINJJ47RSKB74CCAWSP5BUGZ/TGOWV4725NO3KHVKMWHG47SRPLMNHMOO/433XP6QWDVL6KQ5K7ZCOP524TX4LE4RJ.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src:
+    url("https://cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2") format("woff2"),
+    url("https://cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src:
+    url("https://cdn.fontshare.com/wf/WOIRGZ7T5ERZLQWEZC5Y5LLHOCZXTMCM/R2YNHTDIDGFZLQWUMMIJSSFU2CUMQYZ5/RMBKFTS6UFOXVBCL3EVCXLWRQBA3PN4K.woff2") format("woff2"),
+    url("https://cdn.fontshare.com/wf/WOIRGZ7T5ERZLQWEZC5Y5LLHOCZXTMCM/R2YNHTDIDGFZLQWUMMIJSSFU2CUMQYZ5/RMBKFTS6UFOXVBCL3EVCXLWRQBA3PN4K.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src:
+    url("https://cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff2") format("woff2"),
+    url("https://cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    color: #241b19;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.78), transparent 36%),
+      linear-gradient(180deg, rgba(247, 241, 237, 0.7) 0%, #faf7f4 32%, #fff 100%);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+@layer components {
+  .page-bg {
+    background:
+      radial-gradient(circle at 24% 9%, rgba(255, 255, 255, 0.7), transparent 28%),
+      radial-gradient(circle at 84% 17%, rgba(232, 218, 205, 0.62), transparent 30%),
+      #fbf7f2;
+  }
+
+  .nav-link {
+    @apply relative inline-flex items-center gap-1.5 py-3 font-nav text-[16px] font-bold uppercase leading-none text-ink/75 transition-colors;
+    letter-spacing: -0.024em;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute bottom-1 left-0 right-0 h-px origin-left scale-x-0 rounded-full bg-current opacity-0 transition;
+  }
+
+  .nav-link:hover::after,
+  .nav-link[data-active="true"]::after {
+    @apply scale-x-100 opacity-100;
+  }
+
+  .micro-label {
+    @apply text-[10px] font-extrabold uppercase tracking-[0.48em] text-[#9b725f];
+  }
+
+  .display-title {
+    @apply font-display font-medium text-[#241815];
+    letter-spacing: -0.03em;
+  }
+
+  .glass-card {
+    @apply border border-[rgba(166,132,111,0.14)] bg-[rgba(255,252,248,0.72)] shadow-soft;
+  }
+
+  .clearance-scrollbar {
+    scrollbar-color: rgba(169, 121, 102, 0.44) transparent;
+    scrollbar-width: thin;
+  }
+
+  .clearance-scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .clearance-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .clearance-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(169, 121, 102, 0.44);
+    border-radius: 999px;
+  }
+
+  .editorial-hero {
+    container-type: inline-size;
+    height: calc(100vh - var(--yoora-home-top-offset, 101px));
+    height: calc(100dvh - var(--yoora-home-top-offset, 101px));
+    min-height: 600px;
+  }
+
+  .editorial-brand-title {
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: clamp(30px, 8.6vw, 34px);
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 0.86;
+    transform: translateX(-50%) scaleX(1);
+    transform-origin: center;
+  }
+
+  .editorial-brand-fill {
+    color: #51403a;
+  }
+
+  .editorial-brand-outline {
+    color: rgba(81, 64, 58, 0.12);
+    -webkit-text-fill-color: rgba(81, 64, 58, 0.12);
+    -webkit-text-stroke: clamp(0.92px, 0.095vw, 1.34px) #51403a;
+    filter: drop-shadow(0 0 0.5px rgba(255, 250, 247, 0.72));
+  }
+
+  @media (min-width: 640px) {
+    .editorial-hero {
+      min-height: 660px;
+    }
+
+    .editorial-brand-title {
+      font-size: clamp(68px, min(11.4vw, 13.4cqw), 196px);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .editorial-hero {
+      min-height: 720px;
+    }
+
+    .editorial-brand-title {
+      font-size: clamp(88px, min(11vw, 12.8cqw), 214px);
+    }
+  }
+}

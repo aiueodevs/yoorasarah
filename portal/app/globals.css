@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    margin: 0;
+    background: #fbf7f3;
+    color: #2b211e;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: 0;
+  }
+
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .field {
+    @apply w-full rounded-lg border border-line bg-white px-3 py-2 text-sm outline-none transition focus:border-clay;
+  }
+
+  .label {
+    @apply text-[11px] font-bold uppercase tracking-[0.18em] text-clay/70;
+  }
+
+  .button-primary {
+    @apply inline-flex min-h-10 items-center justify-center rounded-lg bg-clay px-4 text-sm font-bold text-white transition hover:bg-[#6b554d] disabled:cursor-not-allowed disabled:opacity-55;
+  }
+
+  .button-secondary {
+    @apply inline-flex min-h-10 items-center justify-center rounded-lg border border-line bg-white px-4 text-sm font-bold text-clay transition hover:border-clay disabled:cursor-not-allowed disabled:opacity-55;
+  }
+}

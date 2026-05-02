@@ -1,0 +1,38 @@
+# dependencies
+node_modules/
+
+# env and secrets
+.env
+.env.*
+!.env.example
+
+# Next.js
+.next/
+out/
+
+# build output
+dist/
+build/
+coverage/
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun-debug.log*
+frontend-dev.*.log
+
+# local security notes
+SECURITY_AUDIT.md
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# hosting/cache
+.vercel/
+.turbo/
